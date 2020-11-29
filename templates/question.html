@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% from "show_links.html" import show_links %}
+
+{% block title %} Ask {% endblock %}
+
+{% block nav %}
+          {{ show_links(user) }}
+{% endblock %}
+
+{% block body %}
+        <!-- To show a particular question, we have all the info in question variable which is a dictionary passed to this html-->
+      <div class="jumbotron">
+        <h1>{{ question['question_text'] }}?</h1>
+        <p>{{ question['answer_text'] }}</p>
+        <p><a class="btn btn-primary btn-lg">Asked By: {{ question['asker_name'] }}</a></p>
+        <p><a class="btn btn-primary btn-lg">Answered By: {{ question['expert_name'] }}</a></p>
+      </div>
+{% end block %}
